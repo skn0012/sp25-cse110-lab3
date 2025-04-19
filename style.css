@@ -1,0 +1,198 @@
+/* CSS Variables */
+:root {
+    --primary-color: hsl(210, 100%, 50%);
+    --accent-color: #ff6f61;
+    --bg-color: rgba(240, 248, 255, 0.95);
+    --font-stack: 'Roboto', sans-serif;
+}
+
+/* Universal selector */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-stack, Arial, sans-serif);
+}
+
+/* Element Selectors */
+body {
+    background-color: var(--bg-color);
+    padding: 2rem;
+}
+
+h1, h2, h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+p, li, label, input, select, textarea {
+    font-size: 1rem;
+}
+
+/* Class Selectors */
+.highlight {
+    background-color: color-mix(in srgb, orange 70%, white);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+/* ID Selectors */
+#picture img {
+    border: 2px solid var(--primary-color);
+    border-radius: 1rem;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Attribute Selectors */
+input[type="checkbox"]:hover {
+    cursor: pointer;
+    accent-color: var(--accent-color);
+}
+
+/* Pseudo-class Selectors */
+a:hover {
+    text-decoration: underline;
+    color: red;
+}
+
+button:active {
+    background-color: var(--accent-color);
+}
+
+/* Selector List */
+h1, h2, h3 {
+    text-align: center;
+}
+
+/* Combinators */
+header > h1 {
+    font-size: 2rem;
+}
+
+section ~ section {
+    margin-top: 2rem;
+}
+
+nav + hr {
+    margin-top: 1rem;
+}
+
+div + div {
+    margin-top: 0.5rem;
+}
+
+nav ul li {
+    list-style-type: circle;
+    margin-left: 1rem;
+}
+
+/* Combining Two Selectors */
+li.highlight {
+    font-weight: bold;
+}
+
+/* :has() Selector */
+  section:has(audio) {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+/* Nested Selectors */
+@layer nested {
+    section {
+      nav {
+        ul {
+          li {
+            padding: 0.25rem 0;
+          }
+        }
+      }
+    }
+}
+
+/* Box Model: Margin, Padding, Border */
+header {
+    margin-top: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+
+    padding: 1rem 2rem 1rem 2rem;
+
+    border-style: solid;
+    border-color: var(--primary-color);
+    border-width: 2px;
+    border-radius: 1rem;
+}
+
+main {
+    margin: auto;
+    padding: 2rem;
+    border: 1px dashed var(--accent-color);
+    border-radius: 2rem;
+    max-width: 1200px;
+}
+
+/* Display */
+nav ul {
+    display: block;
+}
+
+nav ol li {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+/* Flexbox */
+.attendees-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Grid */
+.grid-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+}
+
+ /* Sizing */
+video {
+    width: 320px;
+    height: 240px;
+    max-width: 100%;
+    min-width: 200px;
+}
+
+/* Position */
+footer {
+    position: relative;
+    bottom: 0;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-color);
+}
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+    body {
+      padding: 1rem;
+    }
+    .grid-section {
+      grid-template-columns: 1fr;
+    }
+    nav ol li {
+      display: block;
+      margin-bottom: 1rem;
+    }
+}
