@@ -31,9 +31,11 @@ p, li, label, input, select, textarea {
 
 /* Class Selectors */
 .highlight {
-    background-color: color-mix(in srgb, orange 70%, white);
+    background-color: orange;
+    color: white;
     padding: 0.5rem;
     border-radius: 0.5rem;
+    font-weight: bold;
 }
 
 /* ID Selectors */
@@ -102,15 +104,10 @@ li.highlight {
 
 /* Nested Selectors */
 @layer nested {
-    section {
-      nav {
-        ul {
-          li {
-            padding: 0.25rem 0;
-          }
-        }
-      }
+    section nav ul li {
+        padding: 0.25rem 0;
     }
+
 }
 
 /* Box Model: Margin, Padding, Border */
